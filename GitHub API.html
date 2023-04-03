@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search in the database</title>
+    <script src="index.js" type="module"></script>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #666;
+            font-size: 15px;
+        }
+
+        input[type="text"] {
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 15px;
+            color: #333;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #666;
+        }
+
+        button[type="button"] {
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button[type="button"]:hover {
+            background-color: #0062cc;
+        }
+
+        #results {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #results span {
+            font-size: 20px;
+
+            color: #333;
+        }
+
+        #numRepos,
+        #biggestRepos,
+        #numOrgs {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h1>Search in the GitHub database</h1>
+        <!-- Input for organization name and button -->
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name...">
+            <button id="search" type="button">Search</button>
+        </form>
+        <!-- Show obtained results -->
+        <div id="results">
+            <span>Number of repositories:</span><span id="numRepos"></span>
+            <span>Biggest repository:</span><span id="biggestRepos"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <!-- Button to show total number of organizations -->
+        <form>
+            <button id="showNumOrg" type="button">Show current number of organizations</button>
+        </form>
+        <!-- Show obtained results -->
+        <div id="results">
+            <span>Number of organizations currently on GitHub:</span><span id="numOrgs"></span>
+        </div>
+    </div>
+</body>
+
+</html>
