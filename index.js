@@ -28,7 +28,8 @@ async function searchByOrganization() {
     const nombre = document.getElementById("name").value;
 
     var octokit = new Octokit({
-        auth: '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',
+        /*auth: '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',
+        */
         baseUrl: 'https://api.github.com'
     })
 
@@ -74,7 +75,8 @@ async function numOrgs() {
     try {
 
         const octokit = new Octokit({
-            auth: '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',
+            /*auth: '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',
+            */
             baseUrl: 'https://api.github.com'
         });
 
